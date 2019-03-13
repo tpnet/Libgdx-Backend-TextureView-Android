@@ -1,0 +1,2 @@
+# LibgdxTextureView
+Libgdx use TextureView Rendering，修改Libgdx为TextureView，可以跟原生的view进行透明层叠
