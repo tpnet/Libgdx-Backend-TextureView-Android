@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    //compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly "com.badlogicgames.gdx:gdx:1.9.8"
+
+    compileOnly 'com.android.support:appcompat-v7:28.0.0'
+}
+
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+
+
+task makeJar(type: Copy) {
+    def name = "Libgdx-Backend-Android-TextureView-1.9.8.jar"
+    delete 'build/libs/' + name
+    from('build/intermediates/packaged-classes/release/')
+    into('build/libs/')
+    include('classes.jar')
+    rename('classes.jar', name)
+}
+// 在终端执行生成JAR包
+// ./gradlew build
+// build.finalizedBy makeJar
+// 或者
+makeJar.dependsOn(build)
+// ./gradlew makeJar
+

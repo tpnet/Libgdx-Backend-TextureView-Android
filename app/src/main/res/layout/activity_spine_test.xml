@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+>
+
+    <ImageView
+            android:id="@+id/mIVBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/read_bg_notes"/>
+
+    <FrameLayout
+            android:id="@+id/mLayoutGdx"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    <Button
+            android:id="@+id/btn_run"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@android:color/holo_green_light"
+            android:text="Run"
+            android:textAllCaps="false"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true"
+            android:textColor="@android:color/white"/>
+
+
+    <Button
+            android:id="@+id/btn_jump"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_run"
+            android:layout_margin="8dp"
+            android:background="@android:color/holo_green_light"
+            android:text="Jump"
+            android:textAllCaps="false"
+
+            android:textColor="@android:color/white"/>
+
+    <Button
+            android:id="@+id/btn_walk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_jump"
+            android:layout_margin="8dp"
+            android:textAllCaps="false"
+            android:background="@android:color/holo_green_light"
+            android:text="Walk"
+            android:textColor="@android:color/white"/>
+
+</RelativeLayout>
