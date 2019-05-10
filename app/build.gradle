@@ -41,12 +41,12 @@ dependencies {
 
 
     //引入libgdx
-    implementation 'com.badlogicgames.gdx:gdx:1.9.8'
-    //api "com.badlogicgames.gdx:gdx-backend-android:1.9.8"
+    implementation 'com.badlogicgames.gdx:gdx:1.9.9'
+    //api "com.badlogicgames.gdx:gdx-backend-android:1.9.9"
 
-    natives "com.badlogicgames.gdx:gdx-platform:1.9.8:natives-armeabi"
-    natives "com.badlogicgames.gdx:gdx-platform:1.9.8:natives-armeabi-v7a"
-    natives "com.badlogicgames.gdx:gdx-platform:1.9.8:natives-x86_64"
+    natives "com.badlogicgames.gdx:gdx-platform:1.9.9:natives-armeabi"
+    natives "com.badlogicgames.gdx:gdx-platform:1.9.9:natives-armeabi-v7a"
+    natives "com.badlogicgames.gdx:gdx-platform:1.9.9:natives-x86_64"
 
 
     implementation project(':gdx-backend-android-textureview')

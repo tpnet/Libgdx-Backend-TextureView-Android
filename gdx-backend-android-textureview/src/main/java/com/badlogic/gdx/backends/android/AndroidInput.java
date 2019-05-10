@@ -307,15 +307,15 @@ public class AndroidInput implements Input, OnKeyListener, OnTouchListener {
     }
 
 
-//	@Override
-//	public float getPressure () {
-//		return getPressure(0);
-//	}
+    @Override
+    public float getPressure() {
+        return getPressure(0);
+    }
 
-//	@Override
-//	public float getPressure (int pointer) {
-//		return pressure[pointer];
-//	}
+    @Override
+    public float getPressure(int pointer) {
+        return pressure[pointer];
+    }
 
 
     @Override
@@ -818,7 +818,7 @@ public class AndroidInput implements Input, OnKeyListener, OnTouchListener {
         }
         if (peripheral == Peripheral.MultitouchScreen) return hasMultitouch;
         if (peripheral == Peripheral.RotationVector) return rotationVectorAvailable;
-        //if (peripheral == Peripheral.Pressure) return true;
+        if (peripheral == Peripheral.Pressure) return true;
         return false;
     }
 

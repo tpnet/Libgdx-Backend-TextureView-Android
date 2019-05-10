@@ -20,7 +20,7 @@ class ShowActivity : AndroidApplication() {
 
     companion object {
         fun start(context: Context, useTextureView: Boolean, isTranlate: Boolean = true) {
-            var intent = Intent(context, ShowActivity::class.java)
+            val intent = Intent(context, ShowActivity::class.java)
             intent.putExtra("USETEXTUREVIEW", useTextureView)
             intent.putExtra("ISTRANLATE", isTranlate)
             context.startActivity(intent)
