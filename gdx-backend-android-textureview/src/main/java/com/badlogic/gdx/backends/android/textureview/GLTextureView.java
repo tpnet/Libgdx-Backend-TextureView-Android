@@ -476,7 +476,7 @@ public class GLTextureView extends TextureView
      * Must not be called before a renderer has been set.
      */
     @Override
-    protected void onDetachedFromWindow() {
+    public void onDetachedFromWindow() {
         if (LOG_ATTACH_DETACH) {
             Log.d(TAG, "onDetachedFromWindow");
         }
