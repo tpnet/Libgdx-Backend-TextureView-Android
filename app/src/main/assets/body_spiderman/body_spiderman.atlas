@@ -1,0 +1,48 @@
+
+body_spiderman.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_spider/blank
+  rotate: false
+  xy: 1, 491
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+body_spider/spina_body2_spider
+  rotate: false
+  xy: 177, 393
+  size: 65, 66
+  orig: 65, 66
+  offset: 0, 0
+  index: -1
+body_spider/spina_body1_spider
+  rotate: false
+  xy: 91, 393
+  size: 84, 86
+  orig: 84, 86
+  offset: 0, 0
+  index: -1
+body_spider/tail_2_spider
+  rotate: false
+  xy: 1, 393
+  size: 88, 96
+  orig: 88, 96
+  offset: 0, 0
+  index: -1
+body_spider/tail_1_spider
+  rotate: false
+  xy: 1, 266
+  size: 97, 125
+  orig: 97, 125
+  offset: 0, 0
+  index: -1
+body_spider/body_spider
+  rotate: false
+  xy: 1, 1
+  size: 259, 263
+  orig: 259, 263
+  offset: 0, 0
+  index: -1

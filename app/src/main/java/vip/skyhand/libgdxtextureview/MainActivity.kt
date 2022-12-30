@@ -15,7 +15,7 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_spine_test)
 
-        mIVBack.visibility = View.GONE
+        mIvBack.visibility = View.GONE
 
         initListener()
     }

@@ -92,6 +92,7 @@ public class AndroidApplication extends Activity implements AndroidApplicationBa
 	 * @param listener the {@link ApplicationListener} implementing the program logic
 	 * @return the GLSurfaceView of the application */
 	public View initializeForView (ApplicationListener listener) {
+
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		return initializeForView(listener, config);
 	}

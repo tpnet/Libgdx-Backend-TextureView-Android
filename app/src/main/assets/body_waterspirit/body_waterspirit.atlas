@@ -1,0 +1,48 @@
+
+body_waterspirit.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_diver/blank
+  rotate: false
+  xy: 68, 430
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+body_waterspirit/Spina_body2_waterspirit
+  rotate: false
+  xy: 1, 430
+  size: 65, 66
+  orig: 65, 66
+  offset: 0, 0
+  index: -1
+body_waterspirit/Spina_body1_waterspirit
+  rotate: false
+  xy: 143, 393
+  size: 87, 84
+  orig: 87, 84
+  offset: 0, 0
+  index: -1
+body_waterspirit/tail_2_waterspirit
+  rotate: false
+  xy: 1, 266
+  size: 140, 162
+  orig: 140, 162
+  offset: 0, 0
+  index: -1
+body_waterspirit/tail_1_waterspirit
+  rotate: false
+  xy: 143, 266
+  size: 97, 125
+  orig: 97, 125
+  offset: 0, 0
+  index: -1
+body_waterspirit/body_1_waterspirit
+  rotate: false
+  xy: 1, 1
+  size: 259, 263
+  orig: 259, 263
+  offset: 0, 0
+  index: -1
