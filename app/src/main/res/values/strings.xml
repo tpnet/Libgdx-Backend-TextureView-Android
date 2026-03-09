@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">LibgdxTextureView</string>
+    <string name="btn_texture_view">使用TextureView</string>
+    <string name="btn_surface_view_not_top">使用SurfaceView，不置顶</string>
+    <string name="btn_surface_view_top">使用SurfaceView，透明置顶</string>
+    <string name="btn_run">运行(Run)</string>
+    <string name="btn_jump">跳跃(Jump)</string>
+    <string name="btn_walk">行走(Walk)</string>
+    <string name="toast_surface_view">当前是SurfaceView</string>
+    <string name="toast_texture_view">当前是TextureView</string>
+    <string name="spine_test_desc">背景图片为Android原生的ImageView\n怪物为Libgdx渲染的骨骼动画\n按钮为Android原生的Button</string>
 </resources>

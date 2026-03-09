@@ -52,6 +52,19 @@ public class AndroidGL30 extends AndroidGL20 implements GL30 {
 	}
 
 	@Override
+	public void glTexImage2D (int target, int level, int internalformat, int width, int height, int border, int format, int type,
+		int offset) {
+		// Android GLES30 does not expose glTexImage2D with an int offset for PBOs via the standard Java API.
+		// Leaving this empty to satisfy the interface.
+	}
+
+	@Override
+	public void glTexSubImage2D (int target, int level, int xoffset, int yoffset, int width, int height, int format, int type,
+		int offset) {
+		// Same as glTexImage2D, the offset variant is not exposed in the standard Android GLES30 class.
+	}
+
+	@Override
 	public void glTexSubImage3D (int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth,
 		int format, int type, java.nio.Buffer pixels) {
 		GLES30.glTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);

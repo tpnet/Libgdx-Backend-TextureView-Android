@@ -91,4 +91,9 @@ public class AndroidNet implements Net {
 		return result;
 	}
 
+	@Override
+	public boolean isHttpRequestPending (HttpRequest httpRequest) {
+		return netJavaImpl.isHttpRequestPending(httpRequest);
+	}
+
 }

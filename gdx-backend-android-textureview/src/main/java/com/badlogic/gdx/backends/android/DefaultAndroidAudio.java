@@ -231,7 +231,17 @@ public class DefaultAndroidAudio implements AndroidAudio {
 	@Override
 	public void notifyMusicDisposed (AndroidMusic music) {
 		synchronized (musics) {
-			musics.remove(this);
+			musics.remove(music);
 		}
+	}
+
+	@Override
+	public String[] getAvailableOutputDevices () {
+		return new String[0];
+	}
+
+	@Override
+	public boolean switchOutputDevice (String device) {
+		return false;
 	}
 }

@@ -39,6 +39,7 @@ import android.view.View.OnKeyListener;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import com.badlogic.gdx.Input.VibrationType;
 
 import com.badlogic.gdx.AbstractInput;
 import com.badlogic.gdx.Application;
@@ -648,7 +649,6 @@ public class DefaultAndroidInput extends AbstractInput implements AndroidInput {
 			vibrator.vibrate(milliseconds);
 	}
 
-	@Override
 	public void vibrate (long[] pattern, int repeat) {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 			vibrator.vibrate(VibrationEffect.createWaveform(pattern, repeat));
@@ -656,7 +656,6 @@ public class DefaultAndroidInput extends AbstractInput implements AndroidInput {
 			vibrator.vibrate(pattern, repeat);
 	}
 
-	@Override
 	public void cancelVibrate () {
 		vibrator.cancel();
 	}
@@ -1054,5 +1053,36 @@ public class DefaultAndroidInput extends AbstractInput implements AndroidInput {
 				}
 			}
 		}
+	}
+	@Override
+	public void vibrate (VibrationType type) {
+		if (type == VibrationType.LIGHT) vibrate(20);
+		else if (type == VibrationType.MEDIUM) vibrate(50);
+		else if (type == VibrationType.HEAVY) vibrate(100);
+	}
+
+	@Override
+	public void vibrate (int milliseconds, boolean fallbackToOldService) {
+		vibrate(milliseconds);
+	}
+
+	@Override
+	public void vibrate (int milliseconds, int intensity, boolean fallbackToOldService) {
+		vibrate(milliseconds);
+	}
+
+	@Override
+	public void openTextInputField (com.badlogic.gdx.input.NativeInputConfiguration config) {
+		// Not implemented in this backend
+	}
+
+	@Override
+	public void closeTextInputField (boolean sendReturn) {
+		// Not implemented in this backend
+	}
+
+	@Override
+	public void setKeyboardHeightObserver (com.badlogic.gdx.Input.KeyboardHeightObserver observer) {
+		// Not implemented in this backend
 	}
 }

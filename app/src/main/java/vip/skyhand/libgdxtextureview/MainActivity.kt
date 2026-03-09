@@ -3,37 +3,39 @@ package vip.skyhand.libgdxtextureview
 import android.app.Activity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_spine_test.*
+import vip.skyhand.libgdxtextureview.databinding.ActivitySpineTestBinding
 
 /**
  * @author Skyhand
  */
 class MainActivity : Activity() {
 
+    private lateinit var binding: ActivitySpineTestBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_spine_test)
+        binding = ActivitySpineTestBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        mIvBack.visibility = View.GONE
+        binding.mIvBack.visibility = View.GONE
 
         initListener()
     }
 
     private fun initListener() {
-        btn_walk.text = "使用TextureView"
-        btn_walk.setOnClickListener {
+        binding.btnWalk.text = getString(R.string.btn_texture_view)
+        binding.btnWalk.setOnClickListener {
             ShowActivity.start(this, true)
         }
 
-        btn_jump.text = "使用SurfaceView，不置顶"
-        btn_jump.setOnClickListener {
+        binding.btnJump.text = getString(R.string.btn_surface_view_not_top)
+        binding.btnJump.setOnClickListener {
             ShowActivity.start(this, false, false)
         }
 
-        btn_run.text = "使用SurfaceView，透明置顶"
-        btn_run.visibility = View.VISIBLE
-        btn_run.setOnClickListener {
+        binding.btnRun.text = getString(R.string.btn_surface_view_top)
+        binding.btnRun.visibility = View.VISIBLE
+        binding.btnRun.setOnClickListener {
             ShowActivity.start(this, false)
 
         }

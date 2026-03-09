@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LibgdxTextureView</string>
+    <string name="btn_texture_view">Use TextureView</string>
+    <string name="btn_surface_view_not_top">Use SurfaceView, Not Top</string>
+    <string name="btn_surface_view_top">Use SurfaceView, Transparent Top</string>
+    <string name="btn_run">Run</string>
+    <string name="btn_jump">Jump</string>
+    <string name="btn_walk">Walk</string>
+    <string name="toast_surface_view">Currently using SurfaceView</string>
+    <string name="toast_texture_view">Currently using TextureView</string>
+    <string name="spine_test_desc">Background image is a native Android ImageView\nMonster is a skeletal animation rendered by Libgdx\nButtons are native Android Buttons</string>
+</resources>

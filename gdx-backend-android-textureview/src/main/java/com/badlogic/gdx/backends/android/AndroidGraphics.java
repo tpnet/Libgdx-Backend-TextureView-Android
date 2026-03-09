@@ -242,6 +242,34 @@ public class AndroidGraphics extends AbstractGraphics implements Renderer, GLTex
 		}
 	}
 
+	@Override
+	public void setGL31 (GL31 gl31) {
+	}
+
+	@Override
+	public GL31 getGL31 () {
+		return null;
+	}
+
+	@Override
+	public void setGL32 (GL32 gl32) {
+	}
+
+	@Override
+	public GL32 getGL32 () {
+		return null;
+	}
+
+	@Override
+	public boolean isGL31Available () {
+		return false;
+	}
+
+	@Override
+	public boolean isGL32Available () {
+		return false;
+	}
+
 	/** {@inheritDoc} */
 	@Override
 	public int getHeight () {

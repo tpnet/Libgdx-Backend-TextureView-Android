@@ -2,17 +2,20 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-android-extensions'
-
 android {
-    compileSdkVersion 31
+    namespace 'vip.skyhand.libgdxtextureview'
+    compileSdkVersion 34
     defaultConfig {
         applicationId "vip.skyhand.libgdxtextureview"
-        minSdkVersion 15
-        targetSdkVersion 30
+        minSdkVersion 16
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     } 
+
+    buildFeatures {
+        viewBinding true
+    }
 
     buildTypes {
         release {
@@ -23,9 +26,18 @@ android {
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs']
+            // jniLibs.srcDirs = ['libs']
             assets.srcDir "assets"
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 configurations { natives }
@@ -41,7 +53,6 @@ dependencies {
     implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
     //api "com.badlogicgames.gdx:gdx-backend-android:1.9.9"
 
-    natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
     natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
     natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
     natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
@@ -52,4 +63,40 @@ dependencies {
     //解析spine
     implementation 'com.esotericsoftware.spine:spine-libgdx:3.6.53.1'
 
+}
+
+// 自动提取 natives 依赖中的 .so 文件到构建目录
+tasks.register('copyAndroidNatives') {
+    doFirst {
+        file("$buildDir/libs/armeabi-v7a").mkdirs()
+        file("$buildDir/libs/arm64-v8a").mkdirs()
+        file("$buildDir/libs/x86").mkdirs()
+        file("$buildDir/libs/x86_64").mkdirs()
+
+        configurations.getByName("natives").copy().files.each { jar ->
+            def outputDir = null
+            if (jar.name.endsWith("natives-armeabi-v7a.jar")) outputDir = file("$buildDir/libs/armeabi-v7a")
+            if (jar.name.endsWith("natives-arm64-v8a.jar")) outputDir = file("$buildDir/libs/arm64-v8a")
+            if (jar.name.endsWith("natives-x86.jar")) outputDir = file("$buildDir/libs/x86")
+            if (jar.name.endsWith("natives-x86_64.jar")) outputDir = file("$buildDir/libs/x86_64")
+
+            if (outputDir != null) {
+                copy {
+                    from zipTree(jar)
+                    into outputDir
+                    include "*.so"
+                }
+            }
+        }
+    }
+}
+
+// 将提取出的目录关联到 jniLibs
+android.sourceSets.main.jniLibs.srcDirs += "$buildDir/libs"
+
+// 确保在编译前执行提取任务
+tasks.configureEach { task ->
+    if (task.name.startsWith("merge") && task.name.endsWith("JniLibFolders")) {
+        task.dependsOn 'copyAndroidNatives'
+    }
 }

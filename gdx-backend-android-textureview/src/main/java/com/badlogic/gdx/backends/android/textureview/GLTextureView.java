@@ -183,7 +183,7 @@ public class GLTextureView extends TextureView
      * @param preserveOnPause preserve the EGL context when paused
      */
     public void setPreserveEGLContextOnPause(boolean preserveOnPause) {
-        preserveEGLContextOnPause = preserveOnPause;
+        this.preserveEGLContextOnPause = preserveOnPause;
     }
 
     /**

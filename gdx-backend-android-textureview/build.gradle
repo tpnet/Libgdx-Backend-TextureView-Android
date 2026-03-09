@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    namespace 'com.badlogic.gdx.backends'
+    compileSdkVersion 34
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 16
     }
     buildTypes {
         release {
@@ -21,21 +21,21 @@ android {
 dependencies {
     //compileOnly fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly "com.badlogicgames.gdx:gdx:$gdxVersion"
-    compileOnly 'androidx.appcompat:appcompat:1.0.2' 
+    compileOnly 'androidx.appcompat:appcompat:1.4.1'
 }
 
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
+    archiveClassifier = 'sources'
 }
 
 
 
 task makeJar(type: Copy) {
-    def name = "Libgdx-Android-TextureView-$gdxVersion..jar"
+    def name = "Libgdx-Android-TextureView-${gdxVersion}.jar"
     delete 'build/libs/' + name
-    from('build/intermediates/packaged-classes/release/')
+    from('build/intermediates/aar_main_jar/release/')
     into('build/libs/')
     include('classes.jar')
     rename('classes.jar', name)

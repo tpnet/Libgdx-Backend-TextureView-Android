@@ -8,12 +8,21 @@
         android:id="@+id/mIvBack"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/read_bg_notes" />
+        android:background="@mipmap/back" />
+
 
     <FrameLayout
         android:id="@+id/mLayoutGdx"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="@string/spine_test_desc"
+        android:textColor="@android:color/white" />
 
 
     <Button
@@ -23,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="8dp"
         android:background="@android:color/holo_green_light"
-        android:text="Run"
+        android:text="@string/btn_run"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:visibility="invisible" />
@@ -36,7 +45,7 @@
         android:layout_above="@id/btn_run"
         android:layout_margin="8dp"
         android:background="@android:color/holo_green_light"
-        android:text="Jump"
+        android:text="@string/btn_jump"
         android:textAllCaps="false"
 
         android:textColor="@android:color/white" />
@@ -48,7 +57,7 @@
         android:layout_above="@id/btn_jump"
         android:layout_margin="8dp"
         android:background="@android:color/holo_green_light"
-        android:text="Walk"
+        android:text="@string/btn_walk"
         android:textAllCaps="false"
         android:textColor="@android:color/white" />
 
